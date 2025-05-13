@@ -1,4 +1,4 @@
-# asigandor-monto-inicial-client-java
+# asignador-monto-inicial-client-java
 
 Información sociodemográfica para dar respuesta al cliente la sensibilidad de riesgo a incrementos de un monto de la línea.
 
