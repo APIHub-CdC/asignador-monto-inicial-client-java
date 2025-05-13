@@ -1,4 +1,4 @@
-package io.amfis.client;
+package io.ami.client;
 
 import okhttp3.MediaType;
 import okhttp3.ResponseBody;

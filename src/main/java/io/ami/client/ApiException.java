@@ -1,4 +1,4 @@
-package io.amfis.client;
+package io.ami.client;
 
 import java.util.Map;
 import java.util.List;

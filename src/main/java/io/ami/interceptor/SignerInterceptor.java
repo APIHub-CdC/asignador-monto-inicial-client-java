@@ -1,4 +1,4 @@
-package io.amfis.interceptor;
+package io.ami.interceptor;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,8 +9,8 @@ import org.slf4j.LoggerFactory;
 
 import com.google.gson.Gson;
 
-import io.amfis.client.model.Error;
-import io.amfis.client.model.Errores;
+import io.ami.client.model.Error;
+import io.ami.client.model.Errores;
 import okhttp3.Interceptor;
 import okhttp3.MediaType;
 import okhttp3.Protocol;

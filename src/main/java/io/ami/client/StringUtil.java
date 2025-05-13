@@ -1,4 +1,4 @@
-package io.amfis.client;
+package io.ami.client;
 
 
 public class StringUtil {

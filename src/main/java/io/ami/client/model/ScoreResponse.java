@@ -1,4 +1,4 @@
-package io.amfis.client.model;
+package io.ami.client.model;
 
 import java.io.Serializable;
 

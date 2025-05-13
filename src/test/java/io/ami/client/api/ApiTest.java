@@ -1,4 +1,4 @@
-package io.amfis.client.api;
+package io.ami.client.api;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,20 +10,20 @@ import okhttp3.OkHttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import io.amfis.client.ApiClient;
-import io.amfis.client.ApiException;
-import io.amfis.client.model.DomicilioRequest;
-import io.amfis.client.model.PersonaRequest;
-import io.amfis.client.model.RequestAMFIS;
-import io.amfis.client.model.Response;
-import io.amfis.client.model.ScoreResponse;
-import io.amfis.interceptor.SignerInterceptor;
+import io.ami.client.ApiClient;
+import io.ami.client.ApiException;
+import io.ami.client.model.DomicilioRequest;
+import io.ami.client.model.PersonaRequest;
+import io.ami.client.model.RequestAMI;
+import io.ami.client.model.Response;
+import io.ami.client.model.ScoreResponse;
+import io.ami.interceptor.SignerInterceptor;
 
 
 public class ApiTest {
 	
 	private Logger logger = LoggerFactory.getLogger(ApiTest.class.getName());
-	private final AMFisApi api = new AMFisApi();
+	private final AMIApi api = new AMIApi();
 	private String xApiKey = "your_api_key";
 	private String username = "your_username";
 	private String password = "your_password";
@@ -42,7 +42,7 @@ public class ApiTest {
 	}
 
 	@Test
-	public void postAMFISDatosGeneralesTest() throws ApiException {
+	public void postAMIDatosGeneralesTest() throws ApiException {
 		DomicilioRequest domicilio = new DomicilioRequest();
         domicilio.setDireccion("LAGO PEYPUS 25");
         domicilio.setColoniaPoblacion("GRANADA");
@@ -59,23 +59,23 @@ public class ApiTest {
         persona.setRfc("PUCJ800106R88");
         persona.setDomicilio(domicilio);
 
-        RequestAMFIS request = new RequestAMFIS();
+        RequestAMI request = new RequestAMI();
         request.setFolioCliente("123456789");
         request.setPersona(persona);
 
-        ScoreResponse response = api.postAMFISDatosGenerales(this.xApiKey, this.username, this.password, request);
+        ScoreResponse response = api.postAMIDatosGenerales(this.xApiKey, this.username, this.password, request);
         logger.info(response.toString());
 	}
 
 	@Test
-	public void postAMFISFolioConsultaTest() throws ApiException {
-		RequestAMFIS request = new RequestAMFIS();
+	public void postAMIFolioConsultaTest() throws ApiException {
+		RequestAMI request = new RequestAMI();
 
 		request.setFolioCliente("123456789");
 		request.setFolioConsulta(200055948);
 		request.setCP("03500");
 
-		Response response = api.postAMFISFolioConsulta(xApiKey, username, password, request);
+		Response response = api.postAMIFolioConsulta(xApiKey, username, password, request);
 		logger.info(response.toString());
 	}
 

@@ -1,8 +1,8 @@
-package io.amfis.client.model;
+package io.ami.client.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class RequestAMFIS {
+public class RequestAMI {
 	
 	@SerializedName("folioCliente")
 	private String folioCliente;

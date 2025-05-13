@@ -1,17 +1,17 @@
-package io.amfis.client.api;
+package io.ami.client.api;
 
 import com.google.gson.reflect.TypeToken;
 
-import io.amfis.client.ApiClient;
-import io.amfis.client.ApiException;
-import io.amfis.client.ApiResponse;
-import io.amfis.client.Configuration;
-import io.amfis.client.Pair;
-import io.amfis.client.ProgressRequestBody;
-import io.amfis.client.ProgressResponseBody;
-import io.amfis.client.model.RequestAMFIS;
-import io.amfis.client.model.Response;
-import io.amfis.client.model.ScoreResponse;
+import io.ami.client.ApiClient;
+import io.ami.client.ApiException;
+import io.ami.client.ApiResponse;
+import io.ami.client.Configuration;
+import io.ami.client.Pair;
+import io.ami.client.ProgressRequestBody;
+import io.ami.client.ProgressResponseBody;
+import io.ami.client.model.RequestAMI;
+import io.ami.client.model.Response;
+import io.ami.client.model.ScoreResponse;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -20,12 +20,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AMFisApi {
+public class AMIApi {
     private ApiClient apiClient;
-    public AMFisApi() {
+    public AMIApi() {
         this(Configuration.getDefaultApiClient());
     }
-    public AMFisApi(ApiClient apiClient) {
+    public AMIApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
     public ApiClient getApiClient() {
@@ -35,7 +35,7 @@ public class AMFisApi {
         this.apiClient = apiClient;
     }
     
-    public okhttp3.Call postAMFISDatosGeneralesCall(String xApiKey, String username, String password, RequestAMFIS request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postAMIDatosGeneralesCall(String xApiKey, String username, String password, RequestAMI request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = request;
         String localVarPath = "/datos-generales";
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -72,67 +72,67 @@ public class AMFisApi {
         String[] localVarAuthNames = new String[] {  };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-    private okhttp3.Call postAMFISDatosGeneralesBeforeCall(String xApiKey, String username, String password, RequestAMFIS request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postAMIDatosGeneralesBeforeCall(String xApiKey, String username, String password, RequestAMI request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         if (xApiKey == null) {
-            throw new ApiException("Missing the required parameter 'xApiKey' when calling postAMFISDatosGenerales(Async)");
+            throw new ApiException("Missing the required parameter 'xApiKey' when calling postAMIDatosGenerales(Async)");
         }
         if (username == null) {
-            throw new ApiException("Missing the required parameter 'username' when calling postAMFISDatosGenerales(Async)");
+            throw new ApiException("Missing the required parameter 'username' when calling postAMIDatosGenerales(Async)");
         }
         if (password == null) {
-            throw new ApiException("Missing the required parameter 'password' when calling postAMFISDatosGenerales(Async)");
+            throw new ApiException("Missing the required parameter 'password' when calling postAMIDatosGenerales(Async)");
         }
         
-        okhttp3.Call call = postAMFISDatosGeneralesCall(xApiKey, username, password, request, progressListener, progressRequestListener);
+        okhttp3.Call call = postAMIDatosGeneralesCall(xApiKey, username, password, request, progressListener, progressRequestListener);
         return call;
     }
     
-    public ScoreResponse postAMFISDatosGenerales(String xApiKey, String username, String password, RequestAMFIS request) throws ApiException {
-        ApiResponse<ScoreResponse> resp = postAMFISDatosGeneralesWithHttpInfo(xApiKey, username, password, request);
+    public ScoreResponse postAMIDatosGenerales(String xApiKey, String username, String password, RequestAMI request) throws ApiException {
+        ApiResponse<ScoreResponse> resp = postAMIDatosGeneralesWithHttpInfo(xApiKey, username, password, request);
         return resp.getData();
     }
     
-    public ApiResponse<ScoreResponse> postAMFISDatosGeneralesWithHttpInfo(String xApiKey, String username, String password, RequestAMFIS request) throws ApiException {
-        okhttp3.Call call = postAMFISDatosGeneralesBeforeCall(xApiKey, username, password, request, null, null);
+    public ApiResponse<ScoreResponse> postAMIDatosGeneralesWithHttpInfo(String xApiKey, String username, String password, RequestAMI request) throws ApiException {
+        okhttp3.Call call = postAMIDatosGeneralesBeforeCall(xApiKey, username, password, request, null, null);
         Type localVarReturnType = new TypeToken<ScoreResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
 
 
-    public Response postAMFISFolioConsulta(String xApiKey, String username, String password, RequestAMFIS request) throws ApiException {
-        ApiResponse<Response> resp = postAMFISFolioConsultaWithHttpInfo(xApiKey, username, password, request);
+    public Response postAMIFolioConsulta(String xApiKey, String username, String password, RequestAMI request) throws ApiException {
+        ApiResponse<Response> resp = postAMIFolioConsultaWithHttpInfo(xApiKey, username, password, request);
         return resp.getData();
     }
 
-    public ApiResponse<Response> postAMFISFolioConsultaWithHttpInfo(String xApiKey, String username, String password, RequestAMFIS request)
+    public ApiResponse<Response> postAMIFolioConsultaWithHttpInfo(String xApiKey, String username, String password, RequestAMI request)
             throws ApiException {
-        okhttp3.Call call = postAMFISFolioConsultaValidateBeforeCall(xApiKey, username, password, request, null, null);
+        okhttp3.Call call = postAMIFolioConsultaValidateBeforeCall(xApiKey, username, password, request, null, null);
         Type localVarReturnType = new TypeToken<Response>() {
         }.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
-    private okhttp3.Call postAMFISFolioConsultaValidateBeforeCall(String xApiKey, String username, String password, RequestAMFIS request,
-                                                          final ProgressResponseBody.ProgressListener progressListener,
-                                                          final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postAMIFolioConsultaValidateBeforeCall(String xApiKey, String username, String password, RequestAMI request,
+                                                                final ProgressResponseBody.ProgressListener progressListener,
+                                                                final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         if (xApiKey == null) {
-            throw new ApiException("Missing the required parameter 'xApiKey' when calling postAMFISFolioConsulta(Async)");
+            throw new ApiException("Missing the required parameter 'xApiKey' when calling postAMIFolioConsulta(Async)");
         }
         if (username == null) {
-            throw new ApiException("Missing the required parameter 'username' when calling postAMFISFolioConsulta(Async)");
+            throw new ApiException("Missing the required parameter 'username' when calling postAMIFolioConsulta(Async)");
         }
         if (password == null) {
-            throw new ApiException("Missing the required parameter 'password' when calling postAMFISFolioConsulta(Async)");
+            throw new ApiException("Missing the required parameter 'password' when calling postAMIFolioConsulta(Async)");
         }
 
 
-        okhttp3.Call call = postAMFISFolioConsultaCall(xApiKey, username, password, request, progressListener, progressRequestListener);
+        okhttp3.Call call = postAMIFolioConsultaCall(xApiKey, username, password, request, progressListener, progressRequestListener);
         return call;
     }
-    public okhttp3.Call postAMFISFolioConsultaCall(String xApiKey, String username, String password, RequestAMFIS request,
-                                           final ProgressResponseBody.ProgressListener progressListener,
-                                           final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postAMIFolioConsultaCall(String xApiKey, String username, String password, RequestAMI request,
+                                                 final ProgressResponseBody.ProgressListener progressListener,
+                                                 final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = request;
         String localVarPath = "/folio-consulta";
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

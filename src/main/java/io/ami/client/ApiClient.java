@@ -1,4 +1,4 @@
-package io.amfis.client;
+package io.ami.client;
 
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;

@@ -1,4 +1,4 @@
-package io.amfis.interceptor;
+package io.ami.interceptor;
 
 import java.io.File;
 import java.io.FileInputStream;

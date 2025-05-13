@@ -138,7 +138,7 @@ key_password=your_super_secure_password
 ```
 ### Paso 5. Modificar URL y datos de petición
 
-En el archivo ApiTest.java, que se encuentra en ***src/test/java/io/amfis/client/api/***. Se deberá modificar los datos de la petición y de la URL para el consumo de la API en setBasePath("URL"), como se muestra en el siguiente fragmento de código con los datos correspondientes:
+En el archivo ApiTest.java, que se encuentra en ***src/test/java/io/ami/client/api/***. Se deberá modificar los datos de la petición y de la URL para el consumo de la API en setBasePath("URL"), como se muestra en el siguiente fragmento de código con los datos correspondientes:
 
 > **NOTA:** Los datos de la siguiente petición son solo representativos.
 
@@ -146,7 +146,7 @@ En el archivo ApiTest.java, que se encuentra en ***src/test/java/io/amfis/client
 public class ApiTest {
 
     private Logger logger = LoggerFactory.getLogger(ApiTest.class.getName());
-	  private final AMFisApi api = new AMFisApi();
+	  private final AMIApi api = new AMIApi();
     private String xApiKey = "YOUR_APIKEY";
     private String username = "USERNAME";
     private String password = "PASSWORD";
@@ -165,7 +165,7 @@ public class ApiTest {
     }
 
     @Test
-    public void postAMFISDatosGeneralesTest() throws ApiException {
+    public void postAMIDatosGeneralesTest() throws ApiException {
       DomicilioRequest domicilio = new DomicilioRequest();
           domicilio.setDireccion("LAGO PEYPUS 25");
           domicilio.setColoniaPoblacion("GRANADA");
@@ -182,23 +182,23 @@ public class ApiTest {
           persona.setRfc("PUCJ800106R88");
           persona.setDomicilio(domicilio);
 
-          RequestAMFIS request = new RequestAMFIS();
+          RequestAMI request = new RequestAMI();
           request.setFolioCliente("123456789");
           request.setPersona(persona);
 
-          ScoreResponse response = api.postAMFISDatosGenerales(this.xApiKey, this.username, this.password, request);
+          ScoreResponse response = api.postAMIDatosGenerales(this.xApiKey, this.username, this.password, request);
           logger.info(response.toString());
     }
 
     @Test
-    public void postAMFISFolioConsultaTest() throws ApiException {
-      RequestAMFIS request = new RequestAMFIS();
+    public void postAMIFolioConsultaTest() throws ApiException {
+      RequestAMI request = new RequestAMI();
 
       request.setFolioCliente("123456789");
       request.setFolioConsulta(200055948);
       request.setCP("03500");
 
-      Response response = api.postAMFISFolioConsulta(xApiKey, username, password, request);
+      Response response = api.postAMIFolioConsulta(xApiKey, username, password, request);
       logger.info(response.toString());
     }
 
